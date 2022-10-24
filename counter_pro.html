@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        *{
+            background-color:#6580ed;
+        }
+        h1{
+            font-size: 63px;
+    animation: a1;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    width: 23vw;
+    margin-left: 564px;
+        }
+        .change{
+color: rgb(59, 237, 59);
+        }
+        .red{
+color: red;
+        }
+        .black{
+color: black;
+        }
+        @keyframes a1 {
+            0%{background-color:rgb(125, 117, 117);
+                box-shadow: 10px 10px 8px rgb(123, 122, 122);}
+     30%{background-color:red;
+        box-shadow: 10px 10px 8px rgb(233, 119, 119);
+}
+50%{
+    background-color: orange;
+    box-shadow: 10px 10px 8px rgb(169, 133, 66);
+
+}
+74%{
+    background-color:aqua;
+    box-shadow: 10px 10px 8px rgb(140, 247, 247);
+
+}
+100%{
+    background-color: greenyellow;
+    box-shadow: 10px 10px 8px rgb(153, 197, 87);
+}
+    }
+button{
+    border: 4px solid black;
+    border-radius: 10px;
+    height: 6vh;
+    width: 8vw;
+    font-size: 28px;
+}
+#id1{
+
+}
+    </style>
+</head>
+<body align="center">
+    <h1>Counter</h1>
+    <div id="id1" style="font-size:43px; font-weight:600">0</div><br>
+    <button onclick="dec()" ><b>-</b></button>
+    <button onclick="res()" ><b>Reset</b></button>
+    <button onclick="inc()" ><b>+</b></button>
+</body>
+<script>
+    let i=0;
+    let id1=document.getElementById('id1');
+    function colour(){
+    if(`${id1.innerHTML}`>0){
+id1.classList.add("change");
+id1.classList.remove("red");
+id1.classList.remove("black");
+console.log("if");
+}
+else if(`${id1.innerHTML}`<0){
+id1.classList.remove("change");
+id1.classList.add("red");
+id1.classList.remove("black");
+console.log("else");
+}
+else{
+    id1.classList.add("black");
+ id1.classList.remove("change");
+ id1.classList.remove("red");
+
+console.log("else");
+}}
+    function inc(){
+    i++;
+    id1.innerHTML=i;
+    colour();
+
+    }
+    function dec(){
+     --i;
+     id1.innerHTML=i; 
+     colour();  
+    }
+    function res(){
+        let j=0;
+       id1.innerHTML=j;
+       i=0;
+       colour();
+    }
+    
+</script>
+</html>
